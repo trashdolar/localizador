@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+
+</h:head>
+
+<ui:composition template="/template/layoutBase.xhtml">
+
+
+	<ui:define name="content">
+	<center>
+		<p:outputLabel styleClass="titulo" value="Cmos Drake - Tecnologia que Salva Vidas" />
+	</center>
+	<h:form id="formulario">
+	   <p:poll interval="30" update="formulario"/>
+		<f:view>
+			<h:body>
+					<center>
+						<p:gmap id="mapa"
+							center="#{deaController.latitudeLongitudeString}" zoom="18"
+							model="#{deaController.locais}" type="HYBRID"
+							style="width:1400px;height:600px">
+							<p:ajax event="overlaySelect"
+								listener="#{deaController.onMarkerSelect}" />
+							<p:gmapInfoWindow id="infoWindow">
+								<p:outputPanel
+									style="text-align: center; display: block; margin: auto">
+
+									<h:graphicImage library="imagens" name="cmos-drake.png"	/>
+									<br />
+									<h:outputText value="DEA Life 400 Futura - Nº Série: 2018122345" />
+
+								</p:outputPanel>
+							</p:gmapInfoWindow>
+
+						</p:gmap>
+
+						<p:outputPanel style="display:none">
+							<p:graphicImage name="/resources/imagens/locked.png" />
+						</p:outputPanel>
+					</center>
+				</h:body>
+		</f:view>
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
+
+
+</html>

@@ -1,0 +1,41 @@
+/*tamanho da fonte dos componentes do primefaces*/
+.ui-widget {  
+    font-size: 12px !important;  
+} 
+ 
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;   
+}
+
+.titulo {  
+    font-size: 25px !important;
+    font-weight:bold;  
+}
+.semBorda tr, .semBorda td {
+	border: none !important;
+}
+#content {
+ 
+   min-height:93%;
+   position:relative;
+}
+#header {
+   padding:0px;
+}
+
+
+#body {
+ 
+   padding:10px;
+   padding-bottom:60px;
+}
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:20px;  
+   background:#BDBDBD;
+}
